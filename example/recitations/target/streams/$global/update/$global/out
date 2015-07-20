@@ -72,7 +72,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for recitations#recitations_2.10;0.1-SNAPSHOT [pom][0m
 [0m[[0mdebug[0m] [0m	resolved ivy file produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/recitations/target/resolution-cache/recitations/recitations_2.10/0.1-SNAPSHOT/resolved.xml.xml[0m
 [0m[[0mdebug[0m] [0m:: downloading artifacts ::[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 18ms :: artifacts dl 0ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 8ms :: artifacts dl 0ms[0m
 [0m[[0mdebug[0m] [0m	report for recitations#recitations_2.10;0.1-SNAPSHOT compile produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/recitations/target/resolution-cache/reports/recitations-recitations_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for recitations#recitations_2.10;0.1-SNAPSHOT runtime produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/recitations/target/resolution-cache/reports/recitations-recitations_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for recitations#recitations_2.10;0.1-SNAPSHOT test produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/recitations/target/resolution-cache/reports/recitations-recitations_2.10-test.xml[0m
@@ -85,5 +85,5 @@
 [0m[[0mdebug[0m] [0m	report for recitations#recitations_2.10;0.1-SNAPSHOT sources produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/recitations/target/resolution-cache/reports/recitations-recitations_2.10-sources.xml[0m
 [0m[[0mdebug[0m] [0m	report for recitations#recitations_2.10;0.1-SNAPSHOT docs produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/recitations/target/resolution-cache/reports/recitations-recitations_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for recitations#recitations_2.10;0.1-SNAPSHOT pom produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/recitations/target/resolution-cache/reports/recitations-recitations_2.10-pom.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (18ms resolve - 0ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (8ms resolve - 0ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

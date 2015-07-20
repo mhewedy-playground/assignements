@@ -9,7 +9,7 @@
 		extra-scalaVersion="2.9.2"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom"
-		date="20150627220613"/>
+		date="20150717191238"/>
 	<dependencies>
 		<module organisation="org.scala-sbt" name="sbt">
 			<revision name="0.12.4" status="release" pubdate="20130626161550" resolver="sbt-chain" artresolver="sbt-chain" downloaded="false" searched="false" default="false" conf="default(compile), compile" position="19">
@@ -583,7 +583,7 @@
 				<metadata-artifact status="no" details="" size="5193" time="0" location="/Users/mhewedy/.ivy2/cache/org.scalatest/scalatest_2.9.2/ivy-1.9.1.xml" searched="false" origin-is-local="false" origin-location="http://repo1.maven.org/maven2/org/scalatest/scalatest_2.9.2/1.9.1/scalatest_2.9.2-1.9.1.pom"/>
 				<caller organisation="default" name="default-c0433f" conf="optional, compile, provided, compile-internal" rev="1.9.1" rev-constraint-default="1.9.1" rev-constraint-dynamic="1.9.1" callerrev="0.1-SNAPSHOT"/>
 				<artifacts>
-					<artifact name="scalatest_2.9.2" type="jar" ext="jar" status="successful" details="" size="3060295" time="103782" location="/Users/mhewedy/.ivy2/cache/org.scalatest/scalatest_2.9.2/jars/scalatest_2.9.2-1.9.1.jar">
+					<artifact name="scalatest_2.9.2" type="jar" ext="jar" status="no" details="" size="3060295" time="0" location="/Users/mhewedy/.ivy2/cache/org.scalatest/scalatest_2.9.2/jars/scalatest_2.9.2-1.9.1.jar">
 						<origin-location is-local="false" location="http://repo1.maven.org/maven2/org/scalatest/scalatest_2.9.2/1.9.1/scalatest_2.9.2-1.9.1.jar"/>
 					</artifact>
 				</artifacts>

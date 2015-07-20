@@ -1986,19 +1986,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.databinder#dispatch-http_2.9.2;0.8.8!dispatch-http_2.9.2.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalastyle#scalastyle_2.9.2;0.3.2!scalastyle_2.9.2.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] cc.spray#spray-json_2.9.2;1.1.1!spray-json_2.9.2.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo.typesafe.com/typesafe/ivy-releases/org.scalatest/scalatest_2.9.2/1.9.1/jars/scalatest_2.9.2.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.typesafe.com/typesafe/ivy-releases/org.scalatest/scalatest_2.9.2/1.9.1/jars/scalatest_2.9.2.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/org.scalatest/scalatest_2.9.2/1.9.1/jars/scalatest_2.9.2.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://scalasbt.artifactoryonline.com/scalasbt/sbt-plugin-releases/org.scalatest/scalatest_2.9.2/1.9.1/jars/scalatest_2.9.2.jar[0m
-[0m[[0mdebug[0m] [0m		tried /Users/mhewedy/.ivy2/local/org.scalatest/scalatest_2.9.2/1.9.1/jars/scalatest_2.9.2.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo.spray.io/org/scalatest/scalatest_2.9.2/1.9.1/scalatest_2.9.2-1.9.1.jar[0m
-[0m[[0mdebug[0m] [0mCLIENT ERROR: Not Found url=http://repo.spray.io/org/scalatest/scalatest_2.9.2/1.9.1/scalatest_2.9.2-1.9.1.jar[0m
-[0m[[0mdebug[0m] [0m		tried http://repo1.maven.org/maven2/org/scalatest/scalatest_2.9.2/1.9.1/scalatest_2.9.2-1.9.1.jar[0m
-[0m[[0minfo[0m] [0mdownloading http://repo1.maven.org/maven2/org/scalatest/scalatest_2.9.2/1.9.1/scalatest_2.9.2-1.9.1.jar ...[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scalatest/scalatest_2.9.2/1.9.1/scalatest_2.9.2-1.9.1.jar[0m
-[0m[[0mdebug[0m] [0m	public: downloading http://repo1.maven.org/maven2/org/scalatest/scalatest_2.9.2/1.9.1/scalatest_2.9.2-1.9.1.jar.sha1[0m
-[0m[[0mdebug[0m] [0msha1 OK for http://repo1.maven.org/maven2/org/scalatest/scalatest_2.9.2/1.9.1/scalatest_2.9.2-1.9.1.jar[0m
-[0m[[0minfo[0m] [0m	[SUCCESSFUL ] org.scalatest#scalatest_2.9.2;1.9.1!scalatest_2.9.2.jar (103782ms)[0m
+[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalatest#scalatest_2.9.2;1.9.1!scalatest_2.9.2.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.apache.commons#commons-lang3;3.1!commons-lang3.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.sbteclipse#sbteclipse-plugin;2.1.0!sbteclipse-plugin.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] net.databinder#dispatch-core_2.9.2;0.8.8!dispatch-core_2.9.2.jar[0m
@@ -2054,7 +2042,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#cache;0.12.4!cache.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#test-agent;0.12.4!test-agent.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-tools.testing#test-interface;0.5!test-interface.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 541ms :: artifacts dl 117735ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 928ms :: artifacts dl 42ms[0m
 [0m[[0mdebug[0m] [0m	report for default#default-c0433f;0.1-SNAPSHOT compile produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/project/target/resolution-cache/reports/default-default-c0433f-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#default-c0433f;0.1-SNAPSHOT runtime produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/project/target/resolution-cache/reports/default-default-c0433f-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#default-c0433f;0.1-SNAPSHOT test produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/project/target/resolution-cache/reports/default-default-c0433f-test.xml[0m
@@ -2067,5 +2055,5 @@
 [0m[[0mdebug[0m] [0m	report for default#default-c0433f;0.1-SNAPSHOT sources produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/project/target/resolution-cache/reports/default-default-c0433f-sources.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#default-c0433f;0.1-SNAPSHOT docs produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/project/target/resolution-cache/reports/default-default-c0433f-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#default-c0433f;0.1-SNAPSHOT pom produced in /Users/mhewedy/Work/Coursera/progfun/assignements/example/project/target/resolution-cache/reports/default-default-c0433f-pom.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (541ms resolve - 117735ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (928ms resolve - 42ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

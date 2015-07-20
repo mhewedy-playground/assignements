@@ -4,7 +4,7 @@
 		module="funsets-build-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20150707230043"
+		publication="20150717191321"
 		e:scalaVersion="2.10" e:sbtVersion="0.13"
 	>
 		<description>
