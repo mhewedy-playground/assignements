@@ -93,7 +93,7 @@ object Huffman {
    */
   def makeOrderedLeafList(freqs: List[(Char, Int)]): List[Leaf] = freqs match{
       case List() => List()
-      case x :: xs => bubble(freqToLeaf(x) :: makeOrderedLeafList(xs))
+      case x :: xs => bubble(tupleToLeaf(x) :: makeOrderedLeafList(xs))
   }
   
   private def bubble(freqs: List[Leaf]): List[Leaf] = freqs match{
@@ -107,7 +107,7 @@ object Huffman {
       }
   }
   
-  private def freqToLeaf(freq: (Char, Int)) = Leaf(freq._1, freq._2)
+  private def tupleToLeaf(freq: (Char, Int)) = Leaf(freq._1, freq._2)
 
   /**
    * Checks whether the list `trees` contains only one single code tree.

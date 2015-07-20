@@ -39,10 +39,7 @@ object Test {
                                                   //| st(b, a),2), Leaf(e,2), Leaf(d,2), Leaf(f,3), Leaf(c,4), Leaf(z,5), Leaf(x,6
                                                   //| ))
 
-    Huffman.createCodeTree("xxxxxxddabccccefffezzzzz".toList)
-                                                  //> res7: patmat.Huffman.CodeTree = Fork(Fork(Fork(Leaf(d,2),Leaf(f,3),List(d, f
-                                                  //| ),5),Leaf(z,5),List(d, f, z),10),Fork(Leaf(x,6),Fork(Fork(Fork(Leaf(b,1),Lea
-                                                  //| f(a,1),List(b, a),2),Leaf(e,2),List(b, a, e),4),Leaf(c,4),List(b, a, e, c),8
-                                                  //| ),List(x, b, a, e, c),14),List(d, f, z, x, b, a, e, c),24)
+    Huffman.createCodeTree("Hello".toList)        //> res7: patmat.Huffman.CodeTree = Fork(Leaf(l,2),Fork(Leaf(H,1),Fork(Leaf(o,1)
+                                                  //| ,Leaf(e,1),List(o, e),2),List(H, o, e),3),List(l, H, o, e),5)
 
 }
