@@ -132,8 +132,7 @@ object Huffman {
   def combine(trees: List[CodeTree]): List[CodeTree] = trees match{
       case List() => List()
       case x1 :: List() => trees
-      case x1 :: x2 :: List() => trees
-      case x1 :: x2 :: xs => combine(insertInOrder(makeCodeTree(x1, x2), xs))
+      case x1 :: x2 :: xs => /*combine(*/insertInOrder(makeCodeTree(x1, x2), xs)/*)*/
   }
   
   private def insertInOrder(fork: Fork, trees: List[CodeTree]): List[CodeTree] = trees match{
@@ -164,7 +163,14 @@ object Huffman {
    *    the example invocation. Also define the return type of the `until` function.
    *  - try to find sensible parameter names for `xxx`, `yyy` and `zzz`.
    */
-  def until(xxx: ???, yyy: ???)(zzz: ???): ??? = ???
+  
+  type SingletoneFunc = List[CodeTree] => Boolean
+  type CombileFunc = List[CodeTree] => List[CodeTree]
+      
+  def until(singleton: SingletoneFunc, combine: CombileFunc)(trees: List[CodeTree]): CodeTree = {
+      if (singleton(trees)) trees.head else until(singleton, combine)(combine(trees))
+  }
+      
 
   /**
    * This function creates a code tree which is optimal to encode the text `chars`.
@@ -172,7 +178,7 @@ object Huffman {
    * The parameter `chars` is an arbitrary text. This function extracts the character
    * frequencies from that text and creates a code tree based on them.
    */
-  def createCodeTree(chars: List[Char]): CodeTree = ???
+  def createCodeTree(chars: List[Char]): CodeTree = until(singleton, combine)(combine(makeOrderedLeafList(times(chars.toList))))
 
 
 
