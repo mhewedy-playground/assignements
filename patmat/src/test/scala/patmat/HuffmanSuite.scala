@@ -34,11 +34,23 @@ class HuffmanSuite extends FunSuite {
       assert(times("abcaabcde".toList).contains(('a',3)))
   }
 
-  ignore("makeOrderedLeafList for some frequency table") {
+  test("makeOrderedLeafList for some frequency table") {
     assert(makeOrderedLeafList(List(('t', 2), ('e', 1), ('x', 3))) === List(Leaf('e',1), Leaf('t',2), Leaf('x',3)))
   }
+  
+  test("singletone with zeor element"){
+      assert(!singleton(List()))
+  }
+  
+  test("singletone with one element"){
+      assert(singleton(List(makeCodeTree(Leaf('a', 1), Leaf('b', 2)))))
+  }
+  
+  test("singletone with two element"){
+      assert(!singleton(List(makeCodeTree(Leaf('a', 1), Leaf('b', 2)), Leaf('b', 2))))
+  }
 
-  ignore("combine of some leaf list") {
+  test("combine of some leaf list") {
     val leaflist = List(Leaf('e', 1), Leaf('t', 2), Leaf('x', 4))
     assert(combine(leaflist) === List(Fork(Leaf('e',1),Leaf('t',2),List('e', 't'),3), Leaf('x',4)))
   }

@@ -79,7 +79,7 @@ object Huffman {
    */
   def times(chars: List[Char]): List[(Char, Int)] = if (chars.isEmpty) List() else timesMatches(chars.head, times(chars.tail))
   
-  def timesMatches(ch: Char, pairs: List[(Char, Int)]): List[(Char, Int)] = pairs match{
+  private def timesMatches(ch: Char, pairs: List[(Char, Int)]): List[(Char, Int)] = pairs match{
       case List() => List((ch, 1))
       case x :: xs => if (x._1 == ch) (ch, x._2 + 1) :: xs else x :: timesMatches(ch, xs)
   }
@@ -91,12 +91,31 @@ object Huffman {
    * head of the list should have the smallest weight), where the weight
    * of a leaf is the frequency of the character.
    */
-  def makeOrderedLeafList(freqs: List[(Char, Int)]): List[Leaf] = ???
+  def makeOrderedLeafList(freqs: List[(Char, Int)]): List[Leaf] = freqs match{
+      case List() => List()
+      case x :: xs => bubble(freqToLeaf(x) :: makeOrderedLeafList(xs))
+  }
+  
+  private def bubble(freqs: List[Leaf]): List[Leaf] = freqs match{
+      case List() => List()
+      case x :: xs => {
+          if (!xs.isEmpty && x.weight > xs.head.weight) {
+              xs.head :: bubble(x :: xs.tail)
+          }else {
+              x :: bubble(xs)
+          }
+      }
+  }
+  
+  private def freqToLeaf(freq: (Char, Int)) = Leaf(freq._1, freq._2)
 
   /**
    * Checks whether the list `trees` contains only one single code tree.
    */
-  def singleton(trees: List[CodeTree]): Boolean = ???
+  def singleton(trees: List[CodeTree]): Boolean = trees match{
+      case x :: List() => true
+      case _ => false
+  }
 
   /**
    * The parameter `trees` of this function is a list of code trees ordered
@@ -110,7 +129,23 @@ object Huffman {
    * If `trees` is a list of less than two elements, that list should be returned
    * unchanged.
    */
-  def combine(trees: List[CodeTree]): List[CodeTree] = ???
+  def combine(trees: List[CodeTree]): List[CodeTree] = trees match{
+      case List() => List()
+      case x1 :: List() => trees
+      case x1 :: x2 :: List() => trees
+      case x1 :: x2 :: xs => combine(insertInOrder(makeCodeTree(x1, x2), xs))
+  }
+  
+  private def insertInOrder(fork: Fork, trees: List[CodeTree]): List[CodeTree] = trees match{
+      case List() => List(fork)
+      case x :: xs => x match {
+          case Fork(_, _, _, w) => insertForkRec(fork, x, w, xs)
+          case Leaf(_, w) => insertForkRec(fork, x, w, xs)
+      }
+  }
+  
+  private def insertForkRec(fork: Fork, x: CodeTree, xWeight: Int, xs: List[CodeTree]) = 
+      if (fork.weight > xWeight) x :: (insertInOrder(fork, xs)) else fork :: x :: xs
 
   /**
    * This function will be called in the following way:

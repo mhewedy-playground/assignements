@@ -21,13 +21,24 @@ object Test {
 
     //Huffman.times(List('a', 'b', 'a'))
 
-    Huffman.timesMatches('b', List(('a', 3), ('b', 5)))
-                                                  //> res5: List[(Char, Int)] = List((a,3), (b,6))
+    //Huffman.timesMatches('b', List(('a', 3), ('b', 5)))
 
-    List(('a', 3), ('b', 5))                      //> res6: List[(Char, Int)] = List((a,3), (b,5))
+    List(('a', 3), ('b', 5))                      //> res5: List[(Char, Int)] = List((a,3), (b,5))
 
-    ('a', 3) :: ('b', 5) :: Nil                   //> res7: List[(Char, Int)] = List((a,3), (b,5))
+    ('a', 3) :: ('b', 5) :: Nil                   //> res6: List[(Char, Int)] = List((a,3), (b,5))
 
-    Huffman.times("abcaabcde".toList)             //> res8: List[(Char, Int)] = List((e,1), (d,1), (c,2), (b,2), (a,3))
+    val pairList = Huffman.times("xxxxxxddabccccefffezzzzz".toList)
+                                                  //> pairList  : List[(Char, Int)] = List((z,5), (e,2), (f,3), (c,4), (b,1), (a,1
+                                                  //| ), (d,2), (x,6))
+
+    val trees = Huffman.makeOrderedLeafList(pairList)
+                                                  //> trees  : List[patmat.Huffman.Leaf] = List(Leaf(b,1), Leaf(a,1), Leaf(e,2), L
+                                                  //| eaf(d,2), Leaf(f,3), Leaf(c,4), Leaf(z,5), Leaf(x,6))
+
+    val combined = Huffman.combine(trees)         //> combined  : List[patmat.Huffman.CodeTree] = List(Fork(Fork(Fork(Leaf(d,2),Le
+                                                  //| af(f,3),List(d, f),5),Leaf(z,5),List(d, f, z),10),Fork(Leaf(x,6),Fork(Fork(F
+                                                  //| ork(Leaf(b,1),Leaf(a,1),List(b, a),2),Leaf(e,2),List(b, a, e),4),Leaf(c,4),L
+                                                  //| ist(b, a, e, c),8),List(x, b, a, e, c),14),List(d, f, z, x, b, a, e, c),24))
+                                                  //| 
 
 }
