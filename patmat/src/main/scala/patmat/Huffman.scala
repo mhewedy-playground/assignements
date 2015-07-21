@@ -241,20 +241,6 @@ object Huffman {
               case Fork(l, r, chrs, _) => {
                   if (!chrs.contains(x)) throw new RuntimeException("char " + x +" not supported in tree " + tree)
                   else {
-                      
-//                      l match {
-//                          case Leaf(ch, _) => if (ch == x) 0 :: encode(root, l)(text)
-//                          case Fork(_, _, ch, _) => if (ch.contains(x)) 0 :: encode(root, l)(text)
-//                          case _ => throw new RuntimeException("???")
-//                      }
-//                      
-//                      r match{
-//                          case Leaf(ch, _) => if (ch == x) 1 :: encode(root, r)(text)
-//                          case Fork(_, _, ch, _) => if (ch.contains(x)) 1 :: encode(root, r)(text)
-//                          case _ => throw new RuntimeException("???")
-//                      }
-//                      throw new RuntimeException("???")
-                      
                       if (l.isInstanceOf[Leaf] && l.asInstanceOf[Leaf].char == x
                               || l.isInstanceOf[Fork] && l.asInstanceOf[Fork].chars.contains(x)){
                           0 :: encode(root, l)(text)
