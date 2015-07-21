@@ -231,29 +231,29 @@ object Huffman {
    */
   def encode(tree: CodeTree)(text: List[Char]): List[Bit] = encode(tree, tree)(text)
   
-  def encode(root: CodeTree, tree: CodeTree)(text: List[Char]): List[Bit] = text match {
+  private def encode(root: CodeTree, tree: CodeTree)(text: List[Char]): List[Bit] = text match {
       case List() => List()
       case x :: xs =>{
           tree match{
               case Leaf(ch, _) => 
                   if (ch != x) throw new RuntimeException("char " + x + " not found in leaf when expected")
                   else encode(root, root)(xs)
-              case Fork(l, r, chrs, _) => {
+              case Fork(left, right, chrs, _) => {
                   if (!chrs.contains(x)) throw new RuntimeException("char " + x +" not supported in tree " + tree)
                   else {
-                      if (l.isInstanceOf[Leaf] && l.asInstanceOf[Leaf].char == x
-                              || l.isInstanceOf[Fork] && l.asInstanceOf[Fork].chars.contains(x)){
-                          0 :: encode(root, l)(text)
-                      }else if (r.isInstanceOf[Leaf] && r.asInstanceOf[Leaf].char == x
-                              || r.isInstanceOf[Fork] && r.asInstanceOf[Fork].chars.contains(x)){
-                          1 :: encode(root, r)(text)
-                      }else{
-                          throw new RuntimeException("???")
-                      }
+                      if (hasText(left, x))
+                          0 :: encode(root, left)(text)
+                      else 
+                          1 :: encode(root, right)(text)
                   }
               }
           }
       }
+  }
+  
+  private def hasText(codeTree: CodeTree, ch: Char): Boolean = {
+      if (codeTree.isInstanceOf[Leaf]) codeTree.asInstanceOf[Leaf].char == ch 
+      else codeTree.asInstanceOf[Fork].chars.contains(ch)
   }
 
   // Part 4b: Encoding using code table

@@ -51,8 +51,7 @@ object Test {
                                                   //> res7: List[Char] = List(z, x, a)
     Huffman.decodedSecret.mkString                //> res8: String = huffmanestcool
 
-    Huffman.encode(codeTree, codeTree)("abc".toList)
-                                                  //> res9: List[patmat.Huffman.Bit] = List(1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1)
+    Huffman.encode(codeTree)("abc".toList)        //> res9: List[patmat.Huffman.Bit] = List(1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1)
                                                   //| 
 
 }
