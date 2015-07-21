@@ -195,7 +195,7 @@ object Huffman {
   private def decodeKeepRefOnRoot(root: CodeTree, tree: CodeTree, bits: List[Bit]): List[Char] = bits match{
       case List() => tree match{
           case Leaf(c, _) => List(c)
-          case _ => throw new RuntimeException("bits are corrupted, bits are finished before reach a leaf")
+          case _ => throw new RuntimeException("bits are corrupted, bits are finished before reaching a leaf")
       }
       case x :: xs => tree match{
           case Leaf(c, _) => c :: decodeKeepRefOnRoot(root, root, bits)
@@ -229,8 +229,46 @@ object Huffman {
    * This function encodes `text` using the code tree `tree`
    * into a sequence of bits.
    */
-  def encode(tree: CodeTree)(text: List[Char]): List[Bit] = ???
-
+  def encode(tree: CodeTree)(text: List[Char]): List[Bit] = encode(tree, tree)(text)
+  
+  def encode(root: CodeTree, tree: CodeTree)(text: List[Char]): List[Bit] = text match {
+      case List() => List()
+      case x :: xs =>{
+          tree match{
+              case Leaf(ch, _) => 
+                  if (ch != x) throw new RuntimeException("char " + x + " not found in leaf when expected")
+                  else encode(root, root)(xs)
+              case Fork(l, r, chrs, _) => {
+                  if (!chrs.contains(x)) throw new RuntimeException("char " + x +" not supported in tree " + tree)
+                  else {
+                      
+//                      l match {
+//                          case Leaf(ch, _) => if (ch == x) 0 :: encode(root, l)(text)
+//                          case Fork(_, _, ch, _) => if (ch.contains(x)) 0 :: encode(root, l)(text)
+//                          case _ => throw new RuntimeException("???")
+//                      }
+//                      
+//                      r match{
+//                          case Leaf(ch, _) => if (ch == x) 1 :: encode(root, r)(text)
+//                          case Fork(_, _, ch, _) => if (ch.contains(x)) 1 :: encode(root, r)(text)
+//                          case _ => throw new RuntimeException("???")
+//                      }
+//                      throw new RuntimeException("???")
+                      
+                      if (l.isInstanceOf[Leaf] && l.asInstanceOf[Leaf].char == x
+                              || l.isInstanceOf[Fork] && l.asInstanceOf[Fork].chars.contains(x)){
+                          0 :: encode(root, l)(text)
+                      }else if (r.isInstanceOf[Leaf] && r.asInstanceOf[Leaf].char == x
+                              || r.isInstanceOf[Fork] && r.asInstanceOf[Fork].chars.contains(x)){
+                          1 :: encode(root, r)(text)
+                      }else{
+                          throw new RuntimeException("???")
+                      }
+                  }
+              }
+          }
+      }
+  }
 
   // Part 4b: Encoding using code table
 
