@@ -63,6 +63,10 @@ class HuffmanSuite extends FunSuite {
   test("createCodeTree of \"Hello\""){
     assert(createCodeTree("Hello".toList) === Fork(Leaf('l',2),Fork(Leaf('H',1),Fork(Leaf('o',1),Leaf('e',1),List('o', 'e'),2),List('H', 'o', 'e'),3),List('l', 'H', 'o','e'),5))
   }
+  
+  test("test `decodedSecret` to equals \"huffmanestcool\""){
+      assert(decodedSecret.mkString == "huffmanestcool")
+  }
 
   ignore("decode and encode a very short text should be identity") {
     new TestTrees {
