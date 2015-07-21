@@ -47,8 +47,9 @@ object Test {
                                                   //| 1),Leaf(a,1),List(b, a),2),Leaf(e,2),List(b, a, e),4),Leaf(c,4),List(b, a, e
                                                   //| , c),8),List(x, b, a, e, c),14),List(d, f, z, x, b, a, e, c),24)
 
-    Huffman.convert(codeTree)                     //> res7: patmat.Huffman.CodeTable = List((d,List(0, 0, 0)), (f,List(0, 0, 1)), 
-                                                  //| (z,List(0, 1)), (x,List(1, 0)), (b,List(1, 1, 0, 0, 0)), (a,List(1, 1, 0, 0,
-                                                  //|  1)), (e,List(1, 1, 0, 1)), (c,List(1, 1, 1)))
+    Huffman.encode(codeTree)("abc".toList)        //> res7: List[patmat.Huffman.Bit] = List(1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1)
+                                                  //| 
+    Huffman.quickEncode(codeTree)("abc".toList)   //> res8: List[patmat.Huffman.Bit] = List(1, 1, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1)
+                                                  //| 
 
 }

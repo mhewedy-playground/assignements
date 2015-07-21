@@ -74,7 +74,17 @@ class HuffmanSuite extends FunSuite {
     }
   }
   
+  test("decode and quickEncode a very short text should be identity") {
+    new TestTrees {
+      assert(decode(t1, quickEncode(t1)("ab".toList)) === "ab".toList)
+    }
+  }
+  
   test("test encode using frenchCode on \"huffmanestcool\" to match `secret`") {
        assert(encode(frenchCode)("huffmanestcool".toList) === secret)
+  }
+  
+  test("test quickEncode using frenchCode on \"huffmanestcool\" to match `secret`") {
+       assert(quickEncode(frenchCode)("huffmanestcool".toList) === secret)
   }
 }
