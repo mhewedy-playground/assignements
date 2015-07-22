@@ -251,6 +251,7 @@ object Huffman {
       }
   }
   
+  // TODO find a better way, hence instanceOf usage in invalid in this course
   private def hasText(codeTree: CodeTree, ch: Char): Boolean = {
       if (codeTree.isInstanceOf[Leaf]) codeTree.asInstanceOf[Leaf].char == ch 
       else codeTree.asInstanceOf[Fork].chars.contains(ch)
