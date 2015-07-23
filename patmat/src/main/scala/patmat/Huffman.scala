@@ -241,7 +241,7 @@ object Huffman {
               case Fork(left, right, chrs, _) => {
                   if (!chrs.contains(x)) throw new RuntimeException("char " + x +" not supported in tree " + tree)
                   else {
-                      if (hasText(left, x))
+                      if (hasChar(left, x))
                           0 :: _encode(root, left)(text)
                       else 
                           1 :: _encode(root, right)(text)
@@ -251,12 +251,12 @@ object Huffman {
       }
   }
   
-  // TODO find a better way, hence instanceOf usage in invalid in this course
-  private def hasText(codeTree: CodeTree, ch: Char): Boolean = {
-      if (codeTree.isInstanceOf[Leaf]) codeTree.asInstanceOf[Leaf].char == ch 
-      else codeTree.asInstanceOf[Fork].chars.contains(ch)
+  private def hasChar(codeTree: CodeTree, ch: Char): Boolean = codeTree match{
+      case Leaf(char, _) if ch == char => true  
+      case Fork(_, _, chars, _) if chars.contains(ch) => true
+      case _ => false
   }
-
+  
   // Part 4b: Encoding using code table
 
   type CodeTable = List[(Char, List[Bit])]
