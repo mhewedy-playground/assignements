@@ -266,7 +266,12 @@ object Huffman {
    * the code table `table`.
    */
   def codeBits(table: CodeTable)(char: Char): List[Bit] = table match{
-      case x :: xs => if (x._1 == char) x._2 else codeBits(xs)(char)  
+      case x :: xs => {
+          x match {
+              case (c, b) if (c == char) => b 
+              case _ => codeBits(xs)(char) 
+          }
+      }//if (x._1 == char) x._2 else codeBits(xs)(char)  
       case _ => List()
   }
       
